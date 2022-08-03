@@ -1,11 +1,13 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://sprites/clr2.png" type="Texture" id=1]
 [ext_resource path="res://sprites/clr.png" type="Texture" id=2]
 [ext_resource path="res://scenes/spriteEditor.gd" type="Script" id=3]
 [ext_resource path="res://sprites/floppy.png" type="Texture" id=4]
-[ext_resource path="res://sprites/new.png" type="Texture" id=5]
+[ext_resource path="res://sprites/exporttt.png" type="Texture" id=5]
 [ext_resource path="res://sprites/pixxiblyaxolotl.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://sprites/reset.png" type="Texture" id=7]
+[ext_resource path="res://sprites/new.png" type="Texture" id=8]
 
 [sub_resource type="TileSet" id=1]
 0/name = "clr.png 0"
@@ -40,7 +42,11 @@
 0/z_index = 0
 
 [sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 1, 1, 1, 1 )
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=24]
+size = 14
+font_data = ExtResource( 6 )
 
 [sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.968627, 0.968627, 0.901961, 1 )
@@ -108,6 +114,8 @@ Button/styles/normal = SubResource( 20 )
 Button/styles/pressed = SubResource( 20 )
 WindowDialog/styles/panel = SubResource( 21 )
 
+[sub_resource type="Theme" id=25]
+
 [node name="spriteEditor" type="Node2D"]
 script = ExtResource( 3 )
 
@@ -123,6 +131,7 @@ format = 1
 tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0 )
 
 [node name="preview" type="TileMap" parent="."]
+modulate = Color( 0.968627, 0.968627, 0.901961, 1 )
 position = Vector2( 16, 472 )
 tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
@@ -151,6 +160,14 @@ custom_styles/focus = SubResource( 3 )
 custom_styles/disabled = SubResource( 3 )
 custom_styles/normal = SubResource( 3 )
 
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Button"]
+margin_right = 41.0
+margin_bottom = 41.0
+custom_fonts/font = SubResource( 24 )
+text = "0"
+align = 1
+valign = 1
+
 [node name="Button3" type="Button" parent="VBoxContainer/HBoxContainer"]
 margin_left = 41.0
 margin_right = 82.0
@@ -161,6 +178,15 @@ custom_styles/pressed = SubResource( 5 )
 custom_styles/focus = SubResource( 5 )
 custom_styles/disabled = SubResource( 5 )
 custom_styles/normal = SubResource( 5 )
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Button3"]
+margin_right = 41.0
+margin_bottom = 41.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 24 )
+text = "1"
+align = 1
+valign = 1
 
 [node name="Button4" type="Button" parent="VBoxContainer/HBoxContainer"]
 margin_left = 82.0
@@ -173,6 +199,14 @@ custom_styles/focus = SubResource( 6 )
 custom_styles/disabled = SubResource( 6 )
 custom_styles/normal = SubResource( 6 )
 
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Button4"]
+margin_right = 41.0
+margin_bottom = 41.0
+custom_fonts/font = SubResource( 24 )
+text = "2"
+align = 1
+valign = 1
+
 [node name="Button5" type="Button" parent="VBoxContainer/HBoxContainer"]
 margin_left = 123.0
 margin_right = 164.0
@@ -183,6 +217,14 @@ custom_styles/pressed = SubResource( 7 )
 custom_styles/focus = SubResource( 7 )
 custom_styles/disabled = SubResource( 7 )
 custom_styles/normal = SubResource( 7 )
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Button5"]
+margin_right = 41.0
+margin_bottom = 41.0
+custom_fonts/font = SubResource( 24 )
+text = "3"
+align = 1
+valign = 1
 
 [node name="Button6" type="Button" parent="VBoxContainer/HBoxContainer"]
 margin_left = 164.0
@@ -195,6 +237,14 @@ custom_styles/focus = SubResource( 8 )
 custom_styles/disabled = SubResource( 8 )
 custom_styles/normal = SubResource( 8 )
 
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Button6"]
+margin_right = 41.0
+margin_bottom = 41.0
+custom_fonts/font = SubResource( 24 )
+text = "4"
+align = 1
+valign = 1
+
 [node name="Button7" type="Button" parent="VBoxContainer/HBoxContainer"]
 margin_left = 205.0
 margin_right = 246.0
@@ -205,6 +255,14 @@ custom_styles/pressed = SubResource( 9 )
 custom_styles/focus = SubResource( 9 )
 custom_styles/disabled = SubResource( 9 )
 custom_styles/normal = SubResource( 9 )
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Button7"]
+margin_right = 41.0
+margin_bottom = 41.0
+custom_fonts/font = SubResource( 24 )
+text = "5"
+align = 1
+valign = 1
 
 [node name="Button8" type="Button" parent="VBoxContainer/HBoxContainer"]
 margin_left = 246.0
@@ -217,6 +275,14 @@ custom_styles/focus = SubResource( 10 )
 custom_styles/disabled = SubResource( 10 )
 custom_styles/normal = SubResource( 10 )
 
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Button8"]
+margin_right = 41.0
+margin_bottom = 41.0
+custom_fonts/font = SubResource( 24 )
+text = "6"
+align = 1
+valign = 1
+
 [node name="Button9" type="Button" parent="VBoxContainer/HBoxContainer"]
 margin_left = 287.0
 margin_right = 328.0
@@ -227,6 +293,14 @@ custom_styles/pressed = SubResource( 11 )
 custom_styles/focus = SubResource( 11 )
 custom_styles/disabled = SubResource( 11 )
 custom_styles/normal = SubResource( 11 )
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Button9"]
+margin_right = 41.0
+margin_bottom = 41.0
+custom_fonts/font = SubResource( 24 )
+text = "7"
+align = 1
+valign = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 41.0
@@ -244,6 +318,14 @@ custom_styles/focus = SubResource( 12 )
 custom_styles/disabled = SubResource( 12 )
 custom_styles/normal = SubResource( 12 )
 
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/Button10"]
+margin_right = 41.0
+margin_bottom = 41.0
+custom_fonts/font = SubResource( 24 )
+text = "8"
+align = 1
+valign = 1
+
 [node name="Button11" type="Button" parent="VBoxContainer/HBoxContainer2"]
 margin_left = 41.0
 margin_right = 82.0
@@ -254,6 +336,14 @@ custom_styles/pressed = SubResource( 13 )
 custom_styles/focus = SubResource( 13 )
 custom_styles/disabled = SubResource( 13 )
 custom_styles/normal = SubResource( 13 )
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/Button11"]
+margin_right = 41.0
+margin_bottom = 41.0
+custom_fonts/font = SubResource( 24 )
+text = "9"
+align = 1
+valign = 1
 
 [node name="Button12" type="Button" parent="VBoxContainer/HBoxContainer2"]
 margin_left = 82.0
@@ -266,6 +356,14 @@ custom_styles/focus = SubResource( 14 )
 custom_styles/disabled = SubResource( 14 )
 custom_styles/normal = SubResource( 14 )
 
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/Button12"]
+margin_right = 41.0
+margin_bottom = 41.0
+custom_fonts/font = SubResource( 24 )
+text = "10"
+align = 1
+valign = 1
+
 [node name="Button13" type="Button" parent="VBoxContainer/HBoxContainer2"]
 margin_left = 123.0
 margin_right = 164.0
@@ -276,6 +374,14 @@ custom_styles/pressed = SubResource( 15 )
 custom_styles/focus = SubResource( 15 )
 custom_styles/disabled = SubResource( 15 )
 custom_styles/normal = SubResource( 15 )
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/Button13"]
+margin_right = 41.0
+margin_bottom = 41.0
+custom_fonts/font = SubResource( 24 )
+text = "11"
+align = 1
+valign = 1
 
 [node name="Button14" type="Button" parent="VBoxContainer/HBoxContainer2"]
 margin_left = 164.0
@@ -288,6 +394,14 @@ custom_styles/focus = SubResource( 16 )
 custom_styles/disabled = SubResource( 16 )
 custom_styles/normal = SubResource( 16 )
 
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/Button14"]
+margin_right = 41.0
+margin_bottom = 41.0
+custom_fonts/font = SubResource( 24 )
+text = "12"
+align = 1
+valign = 1
+
 [node name="Button15" type="Button" parent="VBoxContainer/HBoxContainer2"]
 margin_left = 205.0
 margin_right = 246.0
@@ -298,6 +412,14 @@ custom_styles/pressed = SubResource( 17 )
 custom_styles/focus = SubResource( 17 )
 custom_styles/disabled = SubResource( 17 )
 custom_styles/normal = SubResource( 17 )
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/Button15"]
+margin_right = 41.0
+margin_bottom = 41.0
+custom_fonts/font = SubResource( 24 )
+text = "13"
+align = 1
+valign = 1
 
 [node name="Button16" type="Button" parent="VBoxContainer/HBoxContainer2"]
 margin_left = 246.0
@@ -310,6 +432,14 @@ custom_styles/focus = SubResource( 18 )
 custom_styles/disabled = SubResource( 18 )
 custom_styles/normal = SubResource( 18 )
 
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/Button16"]
+margin_right = 41.0
+margin_bottom = 41.0
+custom_fonts/font = SubResource( 24 )
+text = "14"
+align = 1
+valign = 1
+
 [node name="Button17" type="Button" parent="VBoxContainer/HBoxContainer2"]
 margin_left = 287.0
 margin_right = 328.0
@@ -321,35 +451,62 @@ custom_styles/focus = SubResource( 19 )
 custom_styles/disabled = SubResource( 19 )
 custom_styles/normal = SubResource( 19 )
 
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/Button17"]
+margin_right = 41.0
+margin_bottom = 41.0
+custom_fonts/font = SubResource( 24 )
+text = "15"
+align = 1
+valign = 1
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_left = 135.0
 margin_top = 558.0
 margin_right = 463.0
 margin_bottom = 584.0
+custom_constants/separation = 16
 
 [node name="save" type="TextureButton" parent="HBoxContainer"]
 margin_right = 26.0
-margin_bottom = 26.0
-rect_min_size = Vector2( 26, 26 )
-texture_normal = ExtResource( 4 )
-expand = true
-stretch_mode = 5
-
-[node name="new" type="TextureButton" parent="HBoxContainer"]
-margin_left = 30.0
-margin_right = 56.0
 margin_bottom = 26.0
 rect_min_size = Vector2( 26, 26 )
 texture_normal = ExtResource( 5 )
 expand = true
 stretch_mode = 5
 
+[node name="save2" type="TextureButton" parent="HBoxContainer"]
+margin_left = 42.0
+margin_right = 68.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 26, 26 )
+texture_normal = ExtResource( 4 )
+expand = true
+stretch_mode = 5
+
+[node name="load" type="TextureButton" parent="HBoxContainer"]
+margin_left = 84.0
+margin_right = 110.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 26, 26 )
+texture_normal = ExtResource( 8 )
+expand = true
+stretch_mode = 5
+
+[node name="new" type="TextureButton" parent="HBoxContainer"]
+margin_left = 126.0
+margin_right = 152.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 26, 26 )
+texture_normal = ExtResource( 7 )
+expand = true
+stretch_mode = 5
+
 [node name="AcceptDialog" type="AcceptDialog" parent="."]
-visible = true
 margin_left = 73.0
 margin_top = 178.0
 margin_right = 428.0
 margin_bottom = 319.0
+input_pass_on_modal_close_click = false
 theme = SubResource( 22 )
 popup_exclusive = true
 window_title = ""
@@ -364,5 +521,37 @@ focus_mode = 2
 scroll_active = false
 selection_enabled = true
 
+[node name="FileDialog" type="FileDialog" parent="."]
+margin_left = 91.0
+margin_top = 158.0
+margin_right = 406.0
+margin_bottom = 389.0
+rect_min_size = Vector2( 315, 231 )
+input_pass_on_modal_close_click = false
+theme = SubResource( 25 )
+popup_exclusive = true
+access = 1
+current_dir = "user://"
+current_path = "user://"
+
+[node name="FileDialog2" type="FileDialog" parent="."]
+margin_left = 91.0
+margin_top = 158.0
+margin_right = 406.0
+margin_bottom = 389.0
+rect_min_size = Vector2( 315, 231 )
+input_pass_on_modal_close_click = false
+theme = SubResource( 25 )
+popup_exclusive = true
+window_title = "Open a File"
+mode = 0
+access = 1
+current_dir = "user://"
+current_path = "user://"
+
 [connection signal="pressed" from="HBoxContainer/save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="HBoxContainer/save2" to="." method="_on_save2_pressed"]
+[connection signal="pressed" from="HBoxContainer/load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="HBoxContainer/new" to="." method="_on_new_pressed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_FileDialog_file_selected"]
+[connection signal="file_selected" from="FileDialog2" to="." method="_on_FileDialog2_file_selected"]

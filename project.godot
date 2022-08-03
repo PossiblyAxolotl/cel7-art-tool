@@ -12,6 +12,8 @@ config_version=4
 
 config/name="cel7 art tool"
 run/main_scene="res://scenes/spriteEditor.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="PossiblyAxolotl/cel7 art"
 config/icon="res://icon.png"
 
 [display]
